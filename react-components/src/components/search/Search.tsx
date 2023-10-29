@@ -2,7 +2,7 @@ import React from 'react';
 import './search.css';
 class Search extends React.Component {
   state = {
-    name: localStorage.getItem('name') ? localStorage.getItem('name') : ''
+    name: localStorage.getItem('name') ? localStorage.getItem('name') : '',
   };
   render() {
     const name = this.state.name ? this.state.name : '';

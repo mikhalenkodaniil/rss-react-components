@@ -1,6 +1,10 @@
 .results__section {
   margin-top: 100px;
   display: flex;
-  justify-content: space-around;
   width: 1000px;
+  flex-wrap: wrap;
+}
+
+.searching {
+  font-size: 100px;
 }
