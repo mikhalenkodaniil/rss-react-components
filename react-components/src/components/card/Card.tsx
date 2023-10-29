@@ -1,10 +1,17 @@
 import React from 'react';
 import './card.css';
-
+interface CardProps {
+  name?: string;
+  height?: string;
+  mass?: string;
+  hair_color?: string;
+  skin_color?: string;
+  eye_color?: string;
+  gender?: string;
+}
 class Card extends React.Component {
   render() {
-    const data = this.props.data;
-    // console.log(data);
+    const data: CardProps = this.props.data;
     return (
       <>
         <section className="card">
