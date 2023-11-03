@@ -1,6 +1,7 @@
 import Card from '../card/Card';
 import { useState } from 'react';
 import './results.css';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 interface IData {
   results: IResults[];
@@ -55,9 +56,62 @@ function Results() {
       </div>
     );
   });
+  const outLinks = data.map((el, id) => {
+    if (id === 0)
+      return (
+        <Link className="results__link" to="/">
+          1
+        </Link>
+      );
+    if ((id + 1) % 3 === 0 && out[id]) {
+      const x = (id + 1) / 3 + 1;
+      return (
+        <Link key={`key${x}`} className="results__link" to={`/${x}`}>
+          {x}
+        </Link>
+      );
+    }
+  });
   return (
     <>
-      <section className="results__section">{out}</section>
+      <BrowserRouter>
+        <section className="results__section">
+          <Routes>
+            <Route
+              index
+              element={
+                <>
+                  {out[0]}
+                  {out[1]}
+                  {out[2]}
+                </>
+              }
+            />
+            <Route
+              path="2"
+              element={
+                <>
+                  {out[3]}
+                  {out[4]}
+                  {out[5]}
+                </>
+              }
+            />
+            <Route
+              path="3"
+              element={
+                <>
+                  {out[6]}
+                  {out[7]}
+                  {out[8]}
+                </>
+              }
+            />
+            <Route path="4" element={<>{out[9]}</>} />
+          </Routes>
+        </section>
+        <div className="results__links__section">{outLinks}</div>
+      </BrowserRouter>
     </>
   );
 }
