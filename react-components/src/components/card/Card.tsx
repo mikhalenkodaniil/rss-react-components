@@ -17,7 +17,6 @@ function Card({
   eye_color,
   gender,
 }: CardProps) {
-  // console.log(props)
   return (
     <>
       <section className="card">

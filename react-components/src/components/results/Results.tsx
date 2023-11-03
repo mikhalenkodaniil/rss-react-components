@@ -19,7 +19,7 @@ function Results() {
   const [name, setName] = useState(
     localStorage.getItem('name') ? localStorage.getItem('name') : ''
   );
-  if (name != localStorage.getItem('name')) {
+  if (name !== localStorage.getItem('name')) {
     setName(localStorage.getItem('name') ? localStorage.getItem('name') : '');
     console.log(name);
   }
