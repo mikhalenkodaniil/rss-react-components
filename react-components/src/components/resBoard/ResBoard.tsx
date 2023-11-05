@@ -1,3 +1,4 @@
+import BigCard from '../bigCard/BigCard';
 import Card from '../card/Card';
 import './resBoard.css';
 import { Route, Routes } from 'react-router-dom';
@@ -10,6 +11,7 @@ interface CardProps {
   skin_color: string;
   eye_color: string;
   gender: string;
+  birth_year: string;
 }
 interface CardData {
   data: CardProps[];
@@ -51,9 +53,10 @@ function ResBoard({ data, name }: CardData) {
               {out[0]}
               {out[1]}
               {out[2]}
+              {<BigCard data={data[0]} />}
             </>
           }
-        />
+        ></Route>
         <Route
           path="2"
           element={
@@ -63,7 +66,7 @@ function ResBoard({ data, name }: CardData) {
               {out[5]}
             </>
           }
-        />
+        ></Route>
         <Route
           path="3"
           element={
@@ -73,7 +76,7 @@ function ResBoard({ data, name }: CardData) {
               {out[8]}
             </>
           }
-        />
+        ></Route>
         <Route path="4" element={<>{out[9]}</>} />
       </Routes>
     </>

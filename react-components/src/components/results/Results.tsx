@@ -15,6 +15,7 @@ interface IResults {
   skin_color: string;
   eye_color: string;
   gender: string;
+  birth_year: string;
 }
 
 function Results() {
