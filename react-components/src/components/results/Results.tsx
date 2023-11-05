@@ -59,14 +59,14 @@ function Results() {
   const outLinks = data.map((el, id) => {
     if (id === 0)
       return (
-        <Link className="results__link" to="/">
+        <Link key={`linkKey${1}`} className="results__link" to="/">
           1
         </Link>
       );
     if ((id + 1) % 3 === 0 && out[id]) {
       const x = (id + 1) / 3 + 1;
       return (
-        <Link key={`key${x}`} className="results__link" to={`/${x}`}>
+        <Link key={`linkKey${x}`} className="results__link" to={`/${x}`}>
           {x}
         </Link>
       );
