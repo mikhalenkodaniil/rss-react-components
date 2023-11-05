@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './results.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 
@@ -45,10 +45,12 @@ function Results() {
   return (
     <>
       <BrowserRouter>
-        <section className="results__section">
+      <Link to={'../'}>
+      <section className="results__section">
           <ResBoard data={data} name={name} />
         </section>
         <OutLinks data={data} name={name} />
+      </Link>
       </BrowserRouter>
     </>
   );
