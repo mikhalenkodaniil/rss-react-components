@@ -2,3 +2,16 @@ a {
   text-decoration: none;
   color: #ff5252;
 }
+
+.fakecard {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+}

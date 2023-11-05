@@ -12,9 +12,8 @@ interface CardProps {
 }
 interface CardData {
   data: CardProps[];
-  name: string | null;
 }
-function OutLinks({ data, name }: CardData) {
+function OutLinks({ data }: CardData) {
   const outLinks = data.map((el, id) => {
     if (id === 0)
       return (
@@ -31,7 +30,6 @@ function OutLinks({ data, name }: CardData) {
       );
     }
   });
-  console.log(data, name);
   return (
     <>
       <div className="results__links__section">{outLinks}</div>

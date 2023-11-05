@@ -45,12 +45,12 @@ function Results() {
   return (
     <>
       <BrowserRouter>
-      <Link to={'../'}>
-      <section className="results__section">
-          <ResBoard data={data} name={name} />
-        </section>
-        <OutLinks data={data} name={name} />
-      </Link>
+        <Link to={'../'}>
+          <section className="results__section">
+            <ResBoard data={data} name={name} />
+          </section>
+          <OutLinks data={data} />
+        </Link>
       </BrowserRouter>
     </>
   );

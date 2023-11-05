@@ -111,11 +111,14 @@ function ResBoard({ data, name }: CardData) {
           element={
             <>
               <Link to={'./1'}>{out[9]}</Link>
+              <div className="fakecard"></div>
+              <div className="fakecard"></div>
               {<Outlet />}
             </>
           }
-        />
-        <Route path="1" element={<BigCard data={data[9]} />} />
+        >
+          <Route path="1" element={<BigCard data={data[9]} />} />
+        </Route>
       </Routes>
     </>
   );
