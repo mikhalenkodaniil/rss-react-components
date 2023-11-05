@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './bigCard.css';
 interface CardProps {
   name: string;
@@ -18,6 +19,9 @@ function BigCard({ data }: IBigCardProps) {
     <>
       <div className="bigcard__section">
         <div className="bigcard__card">
+          <Link to={'../'}>
+            <button className="bigcard__btn">Close</button>
+          </Link>
           <div>Name: {data.name}</div>
           <div>Height: {data.height}</div>
           <div>Mass: {data.mass}</div>

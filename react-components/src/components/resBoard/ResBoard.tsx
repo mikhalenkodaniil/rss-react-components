@@ -1,7 +1,7 @@
 import BigCard from '../bigCard/BigCard';
 import Card from '../card/Card';
 import './resBoard.css';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 
 interface CardProps {
   name: string;
@@ -50,34 +50,72 @@ function ResBoard({ data, name }: CardData) {
           index
           element={
             <>
-              {out[0]}
-              {out[1]}
-              {out[2]}
-              {<BigCard data={data[0]} />}
+              <Link to={'./0/1'}>{out[0]}</Link>
+              <Link to={'./0/2'}>{out[1]}</Link>
+              <Link to={'./0/3'}>{out[2]}</Link>
+              {<Outlet />}
             </>
           }
         ></Route>
+
+        <Route
+          path="0"
+          element={
+            <>
+              <Link to={'./1'}>{out[0]}</Link>
+              <Link to={'./2'}>{out[1]}</Link>
+              <Link to={'./3'}>{out[2]}</Link>
+              {<Outlet />}
+            </>
+          }
+        >
+          {' '}
+          <Route path="1" element={<BigCard data={data[0]} />} />
+          <Route path="2" element={<BigCard data={data[1]} />} />
+          <Route path="3" element={<BigCard data={data[2]} />} />
+        </Route>
+
         <Route
           path="2"
           element={
             <>
-              {out[3]}
-              {out[4]}
-              {out[5]}
+              <Link to={'./1'}>{out[3]}</Link>
+              <Link to={'./2'}>{out[4]}</Link>
+              <Link to={'./3'}>{out[5]}</Link>
+              {<Outlet />}
             </>
           }
-        ></Route>
+        >
+          {' '}
+          <Route path="1" element={<BigCard data={data[3]} />} />
+          <Route path="2" element={<BigCard data={data[4]} />} />
+          <Route path="3" element={<BigCard data={data[5]} />} />
+        </Route>
         <Route
           path="3"
           element={
             <>
-              {out[6]}
-              {out[7]}
-              {out[8]}
+              <Link to={'./1'}>{out[6]}</Link>
+              <Link to={'./2'}>{out[7]}</Link>
+              <Link to={'./3'}>{out[8]}</Link>
+              {<Outlet />}
             </>
           }
-        ></Route>
-        <Route path="4" element={<>{out[9]}</>} />
+        >
+          <Route path="1" element={<BigCard data={data[6]} />} />
+          <Route path="2" element={<BigCard data={data[7]} />} />
+          <Route path="3" element={<BigCard data={data[8]} />} />
+        </Route>
+        <Route
+          path="4"
+          element={
+            <>
+              <Link to={'./1'}>{out[9]}</Link>
+              {<Outlet />}
+            </>
+          }
+        />
+        <Route path="1" element={<BigCard data={data[9]} />} />
       </Routes>
     </>
   );
