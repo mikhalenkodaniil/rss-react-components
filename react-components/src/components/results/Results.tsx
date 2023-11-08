@@ -1,12 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './results.css';
 import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 
-interface IData {
-  results: IResults[];
-}
 interface IResults {
   name: string;
   height: string;
@@ -27,16 +24,12 @@ function Results() {
   }
   const [data, setData] = useState<IResults[]>([]);
   const url = 'https://swapi.dev/api/people/';
-  fetch(url)
-    .then((res) => res.json())
-    .then((APIdata: IData) => {
-      if (!data[0]) {
-        setData(APIdata.results);
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  
+    useEffect(() => {
+      fetch(url)
+      .then(response => response.json())
+      .then(data => setData(data.results))
+    },[])
 
   if (!data[0]) {
     return <div className="searching">Searching...</div>;
