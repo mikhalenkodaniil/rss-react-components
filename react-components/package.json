@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -39,6 +40,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,jsx,tsx,json,css,scss,md}": ["npm run lint", "npm run format:fix"]
+    "src/**/*.{js,ts,jsx,tsx,json,css,scss,md}": [
+      "npm run lint",
+      "npm run format:fix"
+    ]
   }
 }

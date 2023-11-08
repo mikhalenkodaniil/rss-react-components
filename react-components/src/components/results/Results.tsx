@@ -1,63 +1,51 @@
-import React from 'react';
-import Card from '../card/Card';
+import { useEffect, useState } from 'react';
 import './results.css';
-interface CardProps {
-  name?: string;
-  height?: string;
-  mass?: string;
-  hair_color?: string;
-  skin_color?: string;
-  eye_color?: string;
-  gender?: string;
+import { BrowserRouter, Link } from 'react-router-dom';
+import ResBoard from '../resBoard/ResBoard';
+import OutLinks from '../outLinks/OutLinks';
+
+interface IResults {
+  name: string;
+  height: string;
+  mass: string;
+  hair_color: string;
+  skin_color: string;
+  eye_color: string;
+  gender: string;
+  birth_year: string;
 }
-class Results extends React.Component {
-  state = {
-    data: [],
-    loading: true,
-    name: localStorage.getItem('name') ? localStorage.getItem('name') : '',
-  };
 
-  componentDidMount() {
-    const url = 'https://swapi.dev/api/people/';
-    fetch(url)
-      .then((res) => res.json())
-      .then((APIdata) => {
-        const newData: CardProps = APIdata.results;
-        this.setState({
-          data: newData,
-          loading: false,
-          name: localStorage.getItem('name')
-            ? localStorage.getItem('name')
-            : '',
-        });
-        console.log(newData);
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({ loading: false });
-      });
+function Results() {
+  const [name, setName] = useState(
+    localStorage.getItem('name') ? localStorage.getItem('name') : ''
+  );
+  if (name !== localStorage.getItem('name')) {
+    setName(localStorage.getItem('name') ? localStorage.getItem('name') : '');
   }
-  render() {
-    const { data, loading, name } = this.state;
-    this.setState({
-      data: data,
-      loading: loading,
-      name: localStorage.getItem('name') ? localStorage.getItem('name') : '',
-    });
-    if (loading) {
-      return <div className="searching">Searching...</div>;
-    }
-    const out = data.map((el, id) => {
-      if (!el.name.includes(name) && name !== '') return;
-      return (
-        <div key={id}>
-          <Card data={el} />
-        </div>
-      );
-    });
+  const [data, setData] = useState<IResults[]>([]);
+  const url = 'https://swapi.dev/api/people/';
+  
+    useEffect(() => {
+      fetch(url)
+      .then(response => response.json())
+      .then(data => setData(data.results))
+    },[])
 
-    return <section className="results__section">{out}</section>;
+  if (!data[0]) {
+    return <div className="searching">Searching...</div>;
   }
+  return (
+    <>
+      <BrowserRouter>
+        <Link to={'../'}>
+          <section className="results__section">
+            <ResBoard data={data} name={name} />
+          </section>
+          <OutLinks data={data} />
+        </Link>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default Results;
