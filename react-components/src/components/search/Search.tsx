@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './search.css';
 
 function Search() {
+  localStorage.setItem('name', '');
   const [name, setName] = useState(
     localStorage.getItem('name') ? localStorage.getItem('name') : ''
   );
