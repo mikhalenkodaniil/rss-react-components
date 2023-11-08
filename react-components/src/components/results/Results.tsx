@@ -24,7 +24,6 @@ function Results() {
   );
   if (name !== localStorage.getItem('name')) {
     setName(localStorage.getItem('name') ? localStorage.getItem('name') : '');
-    console.log(name);
   }
   const [data, setData] = useState<IResults[]>([]);
   const url = 'https://swapi.dev/api/people/';

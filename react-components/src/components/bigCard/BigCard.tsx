@@ -14,7 +14,6 @@ interface IBigCardProps {
   data: CardProps;
 }
 function BigCard({ data }: IBigCardProps) {
-  console.log(data);
   return (
     <>
       <div className="bigcard__section">
