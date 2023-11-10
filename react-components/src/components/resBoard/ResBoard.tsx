@@ -2,30 +2,14 @@ import BigCard from '../bigCard/BigCard';
 import Card from '../card/Card';
 import './resBoard.css';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import { IResults, BigCardProps } from '../../interfaces';
 
-interface CardProps {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  gender: string;
-  birth_year: string;
-}
+
 interface CardData {
-  data: CardProps[];
+  data: BigCardProps[];
   name: string | null;
 }
-interface IResults {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  gender: string;
-}
+
 function ResBoard({ data, name }: CardData) {
   const out = data.map((el: IResults, id: number) => {
     if (!el.name.includes(name ? name : '') && name !== '') return;

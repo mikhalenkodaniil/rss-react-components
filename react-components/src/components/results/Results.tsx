@@ -3,17 +3,7 @@ import './results.css';
 import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
-
-interface IResults {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  gender: string;
-  birth_year: string;
-}
+import { IResults } from '../../interfaces';
 
 function Results() {
   const [name, setName] = useState(

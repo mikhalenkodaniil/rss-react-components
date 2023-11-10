@@ -1,17 +1,8 @@
 import { Link } from 'react-router-dom';
 import './bigCard.css';
-interface CardProps {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  gender: string;
-  birth_year: string;
-}
+import { BigCardProps } from '../../interfaces';
 interface IBigCardProps {
-  data: CardProps;
+  data: BigCardProps;
 }
 function BigCard({ data }: IBigCardProps) {
   return (
