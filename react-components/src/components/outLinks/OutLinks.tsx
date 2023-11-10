@@ -1,20 +1,11 @@
+import { useContext } from 'react';
 import './outLinks.css';
 import { Link } from 'react-router-dom';
+import { APIContext } from '../../APIContext';
 
-interface CardProps {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  gender: string;
-}
-interface CardData {
-  data: CardProps[];
-}
-function OutLinks({ data }: CardData) {
-  const outLinks = data.map((el, id) => {
+function OutLinks() {
+  const data = useContext(APIContext);
+  const outLinks = data?.map((el, id) => {
     if (id === 0)
       return (
         <Link key={`linkKey${1}`} className="results__link" to="/">

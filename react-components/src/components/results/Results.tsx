@@ -15,15 +15,14 @@ function Results() {
   }
   const [data, setData] = useState<IResults[]>([]);
   const url = 'https://swapi.dev/api/people/';
-  
-  
-    useEffect(() => {
-      fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        setData(data.results)
-      })
-    },[])
+
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.results);
+      });
+  }, []);
 
   if (!data[0]) {
     return <div className="searching">Searching...</div>;
@@ -31,14 +30,14 @@ function Results() {
   return (
     <>
       <BrowserRouter>
-      <APIContext.Provider value={data}>
-      <Link to={'../'}>
-          <section className="results__section">
-            <ResBoard name={name} />
-          </section>
-          <OutLinks />
-        </Link>
-      </APIContext.Provider>
+        <APIContext.Provider value={data}>
+          <Link to={'../'}>
+            <section className="results__section">
+              <ResBoard name={name} />
+            </section>
+            <OutLinks />
+          </Link>
+        </APIContext.Provider>
       </BrowserRouter>
     </>
   );
