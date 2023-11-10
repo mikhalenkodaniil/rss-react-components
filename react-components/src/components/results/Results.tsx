@@ -4,6 +4,7 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 import { IResults } from '../../interfaces';
+import { APIContext } from '../../APIContext';
 
 function Results() {
   const [name, setName] = useState(
@@ -15,10 +16,13 @@ function Results() {
   const [data, setData] = useState<IResults[]>([]);
   const url = 'https://swapi.dev/api/people/';
   
+  
     useEffect(() => {
       fetch(url)
       .then(response => response.json())
-      .then(data => setData(data.results))
+      .then(data => {
+        setData(data.results)
+      })
     },[])
 
   if (!data[0]) {
@@ -27,12 +31,14 @@ function Results() {
   return (
     <>
       <BrowserRouter>
-        <Link to={'../'}>
+      <APIContext.Provider value={data}>
+      <Link to={'../'}>
           <section className="results__section">
-            <ResBoard data={data} name={name} />
+            <ResBoard name={name} />
           </section>
-          <OutLinks data={data} />
+          <OutLinks />
         </Link>
+      </APIContext.Provider>
       </BrowserRouter>
     </>
   );
