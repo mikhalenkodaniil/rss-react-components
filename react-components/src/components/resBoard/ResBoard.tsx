@@ -5,6 +5,7 @@ import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { IResults } from '../../interfaces';
 import { useContext } from 'react';
 import { APIContext } from '../../APIContext';
+import NotFound from '../notFound/NotFound';
 
 interface CardProps {
   name: string | null;
@@ -105,6 +106,7 @@ function ResBoard({ name }: CardProps) {
           >
             <Route path="1" element={<BigCard data={data[9]} />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     );
