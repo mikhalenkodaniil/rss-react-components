@@ -8,6 +8,7 @@ function App() {
       <main className="app">
         <Search />
         <Results />
+        <div>learn react</div>
       </main>
     </>
   );
