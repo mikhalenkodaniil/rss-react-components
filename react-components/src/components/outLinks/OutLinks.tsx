@@ -23,7 +23,7 @@ function OutLinks() {
   });
   return (
     <>
-      <div className="results__links__section">{outLinks}</div>
+      <div className="results__links__section">{"Select page:"}{outLinks}</div>
     </>
   );
 }

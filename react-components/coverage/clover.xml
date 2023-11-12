@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699825228604" clover="3.2.0">
-  <project timestamp="1699825228604" name="All files">
-    <metrics statements="71" coveredstatements="52" conditionals="26" coveredconditionals="9" methods="15" coveredmethods="8" elements="112" coveredelements="69" complexity="0" loc="71" ncloc="71" packages="9" files="9" classes="9"/>
+<coverage generated="1699826137207" clover="3.2.0">
+  <project timestamp="1699826137207" name="All files">
+    <metrics statements="71" coveredstatements="55" conditionals="26" coveredconditionals="9" methods="15" coveredmethods="9" elements="112" coveredelements="73" complexity="0" loc="71" ncloc="71" packages="9" files="9" classes="9"/>
     <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="APIContext.tsx" path="/home/daniil/Desktop/projects/rsschool/rss-react-components-2/react-components/src/APIContext.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.app">
@@ -50,22 +50,22 @@
       </file>
     </package>
     <package name="src.components.outLinks">
-      <metrics statements="13" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="OutLinks.tsx" path="/home/daniil/Desktop/projects/rsschool/rss-react-components-2/react-components/src/components/outLinks/OutLinks.tsx">
-        <metrics statements="13" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="10" count="0" type="stmt"/>
         <line num="15" count="0" type="cond" truecount="0" falsecount="3"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.resBoard">
