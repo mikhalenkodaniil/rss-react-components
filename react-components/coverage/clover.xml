@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699824794328" clover="3.2.0">
-  <project timestamp="1699824794328" name="All files">
-    <metrics statements="71" coveredstatements="51" conditionals="26" coveredconditionals="9" methods="15" coveredmethods="7" elements="112" coveredelements="67" complexity="0" loc="71" ncloc="71" packages="9" files="9" classes="9"/>
+<coverage generated="1699825228604" clover="3.2.0">
+  <project timestamp="1699825228604" name="All files">
+    <metrics statements="71" coveredstatements="52" conditionals="26" coveredconditionals="9" methods="15" coveredmethods="8" elements="112" coveredelements="69" complexity="0" loc="71" ncloc="71" packages="9" files="9" classes="9"/>
     <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="APIContext.tsx" path="/home/daniil/Desktop/projects/rsschool/rss-react-components-2/react-components/src/APIContext.tsx">
@@ -41,12 +41,12 @@
       </file>
     </package>
     <package name="src.components.notFound">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="NotFound.tsx" path="/home/daniil/Desktop/projects/rsschool/rss-react-components-2/react-components/src/components/notFound/NotFound.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.outLinks">
