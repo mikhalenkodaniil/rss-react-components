@@ -1,6 +1,6 @@
 import './App.css';
-import Results from './components/results/Results';
-import Search from './components/search/Search';
+import Results from '../results/Results';
+import Search from '../search/Search';
 
 function App() {
   return (
