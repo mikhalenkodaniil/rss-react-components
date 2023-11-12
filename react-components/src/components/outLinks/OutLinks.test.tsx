@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import OutLinks from './OutLinks';
 
-test('renders learn react link', () => {
+test('renders OutLinks component', () => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
       json: () => Promise.resolve({ test: 100 }),

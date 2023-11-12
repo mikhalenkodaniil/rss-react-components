@@ -3,7 +3,7 @@ import App from '../app/App';
 import { act } from 'react-dom/test-utils';
 
 act(() => {
-  test('renders learn react link', () => {
+  test('renders Results component', () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({ test: 100 }),
