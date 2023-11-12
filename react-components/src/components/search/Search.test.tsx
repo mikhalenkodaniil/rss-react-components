@@ -2,7 +2,7 @@ import { render, fireEvent } from '@testing-library/react';
 import Search from './Search';
 
 describe('Search', () => {
-  test('saves entered value to local storage on Search button click', () => {
+  test('saves entered value to local storage on Search button click and retrieves value of local storage', () => {
     localStorage.setItem('name', 'testValue');
     const { getByPlaceholderText, getByText } = render(<Search />);
     const searchInput = getByPlaceholderText('Search your people in StarWars');

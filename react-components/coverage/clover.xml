@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699821235302" clover="3.2.0">
-  <project timestamp="1699821235302" name="All files">
+<coverage generated="1699823065632" clover="3.2.0">
+  <project timestamp="1699823065632" name="All files">
     <metrics statements="8" coveredstatements="7" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="2" elements="19" coveredelements="13" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
     <file name="Search.tsx" path="/home/daniil/Desktop/projects/rsschool/rss-react-components-2/react-components/src/components/search/Search.tsx">
       <metrics statements="8" coveredstatements="7" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="2"/>
