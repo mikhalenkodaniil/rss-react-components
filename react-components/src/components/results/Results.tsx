@@ -4,7 +4,6 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 import { IResults } from '../../interfaces';
-import { APIContext } from '../../APIContext';
 import { useDispatch } from 'react-redux';
 
 function Results() {
@@ -32,14 +31,12 @@ function Results() {
   return (
     <>
       <BrowserRouter>
-        <APIContext.Provider value={data}>
-          <Link to={'../'}>
-            <section className="results__section">
-              <ResBoard />
-            </section>
-            <OutLinks />
-          </Link>
-        </APIContext.Provider>
+        <Link to={'../'}>
+          <section className="results__section">
+            <ResBoard />
+          </section>
+          <OutLinks />
+        </Link>
       </BrowserRouter>
     </>
   );

@@ -1,11 +1,10 @@
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import './outLinks.css';
 import { Link } from 'react-router-dom';
-import { APIContext } from '../../APIContext';
 
 function OutLinks() {
-  const data = useContext(APIContext);
-  const outLinks = data?.map((el, id) => {
+  const data = useSelector((state) => state.data);
+  const outLinks = data?.map((el: number, id: number) => {
     if (id === 0)
       return (
         <Link key={`linkKey${1}`} className="results__link" to="/">
