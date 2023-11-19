@@ -5,8 +5,10 @@ import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 import { IResults } from '../../interfaces';
 import { APIContext } from '../../APIContext';
+import { useDispatch } from 'react-redux';
 
 function Results() {
+  const dispatch = useDispatch();
   const [name, setName] = useState(
     localStorage.getItem('name') ? localStorage.getItem('name') : ''
   );
@@ -23,7 +25,7 @@ function Results() {
         setData(data.results);
       });
   }, []);
-
+  dispatch({ type: 'SET_DATA', payload: data });
   if (!data[0]) {
     return <div className="searching">Searching...</div>;
   }
@@ -33,7 +35,7 @@ function Results() {
         <APIContext.Provider value={data}>
           <Link to={'../'}>
             <section className="results__section">
-              <ResBoard name={name} />
+              <ResBoard />
             </section>
             <OutLinks />
           </Link>

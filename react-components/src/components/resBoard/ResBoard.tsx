@@ -3,15 +3,17 @@ import Card from '../card/Card';
 import './resBoard.css';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { IResults } from '../../interfaces';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { APIContext } from '../../APIContext';
 import NotFound from '../notFound/NotFound';
+import { useSelector } from 'react-redux';
 
-interface CardProps {
-  name: string | null;
-}
-
-function ResBoard({ name }: CardProps) {
+function ResBoard() {
+  const searchName = useSelector((state) => state.searchName);
+  const [name, setName] = useState('');
+  if (searchName !== name) {
+    setName(searchName);
+  }
   const data = useContext(APIContext);
   const out = data?.map((el: IResults, id: number) => {
     if (!el.name.includes(name ? name : '') && name !== '') return;
