@@ -19,3 +19,8 @@ export interface BigCardProps {
   gender: string;
   birth_year: string;
 }
+
+export interface IStore {
+  searchName: string | null;
+  data: IResults[];
+}
