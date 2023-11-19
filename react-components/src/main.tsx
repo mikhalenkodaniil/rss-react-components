@@ -6,21 +6,24 @@ import { createStore } from 'redux';
 import { IStore } from './interfaces';
 import { Provider } from 'react-redux';
 
-const defaultState:IStore = {
+const defaultState: IStore = {
   searchName: localStorage.getItem('name'),
-  data: []
+  data: [],
 };
 
-const reducer = (state = defaultState, action:{type:string, payload:string}) => {
+const reducer = (
+  state = defaultState,
+  action: { type: string; payload: string }
+) => {
   switch (action.type) {
-    case "SET_NAME":
-      return {...state, searchName: action.payload};
-      case "SET_DATA":
-        return {...state, data: action.payload};
-    default: 
+    case 'SET_NAME':
+      return { ...state, searchName: action.payload };
+    case 'SET_DATA':
+      return { ...state, data: action.payload };
+    default:
       return state;
-  }  
-}
+  }
+};
 
 const store = createStore(reducer);
 
