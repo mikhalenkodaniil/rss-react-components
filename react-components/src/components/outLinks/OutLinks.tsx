@@ -1,19 +1,23 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 function OutLinks() {
   const data = useSelector((state) => state.data);
   const outLinks = data?.map((el: number, id: number) => {
     if (id === 0)
       return (
-        <Link key={`linkKey${1}`} className="results__link" to="/">
+        <Link key={`linkKey${1}`} className="results__link" href="../../../0">
           1
         </Link>
       );
     if ((id + 1) % 3 === 0 && data[id]) {
       const x = (id + 1) / 3 + 1;
       return (
-        <Link key={`linkKey${x}`} className="results__link" to={`/${x}`}>
+        <Link
+          key={`linkKey${x}`}
+          className="results__link"
+          href={`../../../${x - 1}`}
+        >
           {x}
         </Link>
       );

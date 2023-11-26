@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+
 interface CardProps {
   name: string;
   height: string;
@@ -17,7 +18,7 @@ function BigCard({ data }: IBigCardProps) {
     <>
       <div className="bigcard__section">
         <div className="bigcard__card">
-          <Link to={'../'}>
+          <Link href={'./'}>
             <button className="bigcard__btn">Close</button>
           </Link>
           <div>Name: {data.name}</div>

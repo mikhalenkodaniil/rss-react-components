@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
 import { IResults } from '../../interfaces';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
+import { IPageOpen } from '../resBoard/IResBoard';
 
-function Results() {
+function Results({ page, subPage }: IPageOpen) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   useEffect(() => {
@@ -30,14 +31,12 @@ function Results() {
   }
   return (
     <>
-      <BrowserRouter>
-        <Link to={'../'}>
-          <section className="results__section">
-            <ResBoard />
-          </section>
-          <OutLinks />
-        </Link>
-      </BrowserRouter>
+      <Link href={'./'}>
+        <section className="results__section">
+          <ResBoard page={page} subPage={subPage} />
+        </section>
+        <OutLinks />
+      </Link>
     </>
   );
 }
