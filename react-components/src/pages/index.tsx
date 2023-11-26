@@ -1,13 +1,11 @@
 import React from 'react';
-import Search from '../components/search/Search';
-import Results from '../components/results/Results';
+import Layout from '../components/layout/Layout';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <main className="app">
-        <Search />
-        <Results />
+        <Layout />
       </main>
     </>
   );
