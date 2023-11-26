@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 import { createStore } from 'redux';
 import { IStore } from '../interfaces';
 import { Provider } from 'react-redux';
+import { useEffect } from 'react';
 
 const defaultState: IStore = {
   searchName: null,
@@ -28,6 +29,11 @@ const reducer = (
 const store = createStore(reducer);
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    defaultState.searchName = localStorage.getItem('name')
+      ? localStorage.getItem('name')
+      : '';
+  }, []);
   return (
     <>
       {' '}

@@ -1,16 +1,16 @@
-import { useState } from 'react';
-// import './search.css';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 function Search() {
   const dispatch = useDispatch();
-  // !localStorage.getItem('name') ? localStorage.setItem('name', '') : 0;
-  const [name, setName] = useState(
-    // localStorage.getItem('name') ? localStorage.getItem('name') : ''
-    ''
-  );
+  const [name, setName] = useState('');
+  useEffect(() => {
+    if (localStorage.getItem('name')) {
+      setName(localStorage.getItem('name'));
+    }
+  }, []);
   function storageSetItem() {
-    // localStorage.setItem('name', name ? name : '');
+    localStorage.setItem('name', name ? name : '');
     dispatch({ type: 'SET_NAME', payload: localStorage.getItem('name') });
   }
   return (
