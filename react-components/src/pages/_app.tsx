@@ -1,6 +1,12 @@
 import '../index.css';
 import '../components/search/search.css';
 import '../components/app/App.css';
+import '../components/bigCard/bigCard.css';
+import '../components/card/card.css';
+import '../components/notFound/notFound.css';
+import '../components/outLinks/outLinks.css';
+import '../components/resBoard/resBoard.css';
+import '../components/results/results.css';
 import type { AppProps } from 'next/app';
 import { createStore } from 'redux';
 import { IStore } from '../interfaces';

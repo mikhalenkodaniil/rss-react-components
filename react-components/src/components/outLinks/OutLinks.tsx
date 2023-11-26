@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import './outLinks.css';
 import { Link } from 'react-router-dom';
 
 function OutLinks() {

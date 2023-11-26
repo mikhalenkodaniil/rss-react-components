@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './results.css';
 import { BrowserRouter, Link } from 'react-router-dom';
 import ResBoard from '../resBoard/ResBoard';
 import OutLinks from '../outLinks/OutLinks';
@@ -8,12 +7,13 @@ import { useDispatch } from 'react-redux';
 
 function Results() {
   const dispatch = useDispatch();
-  const [name, setName] = useState(
-    localStorage.getItem('name') ? localStorage.getItem('name') : ''
-  );
-  if (name !== localStorage.getItem('name')) {
-    setName(localStorage.getItem('name') ? localStorage.getItem('name') : '');
-  }
+  const [name, setName] = useState('');
+  useEffect(() => {
+    if (name !== localStorage.getItem('name')) {
+      setName(localStorage.getItem('name'));
+    }
+  }, [name]);
+
   const [data, setData] = useState<IResults[]>([]);
   const url = 'https://swapi.dev/api/people/';
 

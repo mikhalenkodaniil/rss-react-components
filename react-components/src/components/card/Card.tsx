@@ -1,4 +1,3 @@
-import './card.css';
 interface CardProps {
   name: string;
   height: string;

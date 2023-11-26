@@ -1,6 +1,5 @@
 import BigCard from '../bigCard/BigCard';
 import Card from '../card/Card';
-import './resBoard.css';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { IResults } from '../../interfaces';
 import { useState } from 'react';

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './bigCard.css';
 interface CardProps {
   name: string;
   height: string;
