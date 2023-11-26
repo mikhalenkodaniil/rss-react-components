@@ -3,7 +3,6 @@ import Card from '../card/Card';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { IResults } from '../../interfaces';
 import { useState } from 'react';
-import NotFound from '../notFound/NotFound';
 import { useSelector } from 'react-redux';
 
 function ResBoard() {
@@ -106,7 +105,6 @@ function ResBoard() {
           >
             <Route path="1" element={<BigCard data={data[9]} />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     );
